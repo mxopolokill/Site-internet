@@ -1,0 +1,25 @@
+.bgcolor-lightgrey {
+    background-color: lightgrey;
+}
+body {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.breadcrumb {
+    border-radius: 0;
+}
+.parallax {
+/* The image used */
+background-image: url("../img/parallax.jpeg");
+
+/* Set a specific height */
+height: 200px;
+
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+html {
+    scroll-behavior: smooth;
+}
