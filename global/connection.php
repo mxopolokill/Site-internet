@@ -1,16 +1,15 @@
-<?php
-
-//Initialisation des variables
-$serveur="localhost";
-$user="root";
-$pass="";
-$database="routard";
-
-//Ici on essaye la connexion
+﻿<?php
+$host='localhost';
+$dbname='routard';
+$user='root';
+$pass='';
 try {
-    $dbh = new PDO('mysql:host='.$serveur.';dbname='.$database.';charset=utf8', $user, $pass);
-
-//Et si il arrive pas à se connecter, il affiche de message d'erreur et tue (die();) la connexion.
+	//new PDO instancie un objet en $dbh
+	//ce constructeur attend 3 paramètres : serveur/bdd, user , mot de pass
+    $dbh = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $pass
+	, array(
+	PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+	PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 } catch (PDOException $e) {
     print "Erreur !: " . $e->getMessage() . "<br/>";
     die();

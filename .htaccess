@@ -1,21 +1,15 @@
-Options +FollowSymlinks
-
-# Activation du module de réécriture d'URL :
+﻿Options +FollowSymlinks
+# Activation du module de réécriture d'URL : 
 RewriteEngine on
 
 #Règles de réécriture :
 # ^ : tout
-# () : on attend un paramètre
-# [a-z] : on attend une lettre en minuscule
+# () : un paramètre
+# [a-z] : une lettre parmi toutes les lettres minuscules
 # + : autant qu'on veut
-# [0-9] : on attend un chiffre
-# [L] : lecture
+# [0-9] : un chiffre
+#[L] : lecture
 # \ : signale une autorisation sur un caractère spécial
 
-# ici, on veut une url du type : /controleur/action/numville/numtype
+# /controleur/action/noville/notype/param3/param4 ..etc
 RewriteRule ^([a-zA-Z0-9\-\_\/]+)$ /routard/index.php?p=$1 [L]
-
-#Ici [a-z]+ : sa veut dire autant de minuscule qu'on veut
-#$1 = premier paramètre
-#$2 = second paramètre
-#Faut faire attention a ce que le rewriting sois activé sur le serveur web
